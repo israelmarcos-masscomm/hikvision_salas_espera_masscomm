@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>MassComm — Caso de éxito: Silencio automático</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #12192b;
+    --navy-2: #1b2440;
+    --orange: #f0703f;
+    --paper: #f4f1ea;
+    --slate: #8b93ab;
+    --line: rgba(244,241,234,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:#1a2233;}
+  body{
+    font-family:'Inter', sans-serif;
+    color: var(--paper);
+    display:flex;
+    justify-content:center;
+    padding:32px 12px;
+  }
+  .sheet{
+    width:794px;
+    min-height:1123px;
+    background: var(--navy);
+    position:relative;
+    overflow:hidden;
+    padding:56px 64px 48px;
+    display:flex;
+    flex-direction:column;
+  }
+  /* ---------- header ---------- */
+  .brand{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;
+    margin-bottom:56px;
+  }
+  .brand-name{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:-0.02em;
+  }
+  .brand-name span{ color: var(--orange); }
+  .brand-tag{
+    font-size:12.5px;
+    color: var(--slate);
+    max-width:230px;
+    text-align:right;
+    line-height:1.4;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{ margin-bottom:52px; }
+  .eyebrow-row{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .sector-tag{
+    font-size:12.5px;
+    color: var(--orange);
+    font-weight:600;
+  }
+  .dot{ width:4px; height:4px; border-radius:50%; background:var(--slate); }
+  .client-tag{ font-size:12.5px; color:var(--slate); }
+
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:46px;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:620px;
+    margin-bottom:22px;
+  }
+  .lede{
+    font-size:15.5px;
+    color:#c9cede;
+    max-width:480px;
+    line-height:1.6;
+  }
+
+  /* ---------- waveform ---------- */
+  .wave-wrap{
+    margin: 40px 0 8px;
+    height:64px;
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+  }
+  .wave-wrap .bar{
+    flex:1;
+    background: var(--orange);
+    border-radius:2px 2px 0 0;
+    opacity:0.9;
+  }
+  .wave-wrap .bar.flat{ background: var(--slate); opacity:0.55; }
+  .wave-caption{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:0.02em;
+    color: var(--slate);
+    padding-top:6px;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* ---------- flow ---------- */
+  .flow{
+    margin:52px 0 56px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .flow-step{
+    flex:1;
+    background: var(--navy-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 18px 16px;
+  }
+  .flow-step .label{
+    font-size:11.5px;
+    color: var(--slate);
+    margin-bottom:6px;
+  }
+  .flow-step .value{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16.5px;
+    font-weight:600;
+  }
+  .flow-arrow{ color: var(--orange); font-size:20px; }
+
+  /* ---------- benefits ---------- */
+  .benefits{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:52px;
+  }
+  .benefit{
+    display:flex;
+    gap:26px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .benefit:last-child{ border-bottom:1px solid var(--line); }
+  .benefit .glyph{
+    width:34px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .benefit .glyph svg{ width:26px; height:26px; }
+  .benefit h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:17px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .benefit p{
+    font-size:14px;
+    color:#c9cede;
+    line-height:1.55;
+    max-width:440px;
+  }
+
+  /* ---------- footer / cta ---------- */
+  .cta{
+    margin-top:auto;
+    background: var(--orange);
+    border-radius:8px;
+    padding:26px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+  .cta-text{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:18.5px;
+    color: var(--navy);
+    max-width:380px;
+    line-height:1.3;
+  }
+  .cta-contact{
+    text-align:right;
+    color: var(--navy);
+    font-size:12.5px;
+    line-height:1.6;
+    font-weight:500;
+  }
+
+  .services-line{
+    margin-top:18px;
+    display:flex;
+    gap:18px;
+    font-size:11px;
+    color: var(--slate);
+    letter-spacing:0.01em;
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+
+    <div class="brand">
+      <div class="brand-name">mass<span>comm</span></div>
+      <div class="brand-tag">Tu aliado integral en soluciones tech</div>
+    </div>
+
+    <div class="hero">
+      <div class="eyebrow-row">
+        <span class="sector-tag">Seguridad · Audiovisuales</span>
+        <span class="dot"></span>
+        <span class="client-tag">Sector salud</span>
+      </div>
+      <h1>Tu pantalla reacciona sola. Tú, a lo tuyo.</h1>
+      <p class="lede">Integración a medida entre HikCentral y Digital Signage que detecta el ruido en una sala de espera y avisa en pantalla al instante, sin que nadie tenga que intervenir.</p>
+
+      <div class="wave-wrap" aria-hidden="true">
+        <div class="bar" style="height:38%"></div>
+        <div class="bar" style="height:71%"></div>
+        <div class="bar" style="height:52%"></div>
+        <div class="bar" style="height:88%"></div>
+        <div class="bar" style="height:44%"></div>
+        <div class="bar" style="height:66%"></div>
+        <div class="bar" style="height:30%"></div>
+        <div class="bar" style="height:58%"></div>
+        <div class="bar" style="height:76%"></div>
+        <div class="bar" style="height:41%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+        <div class="bar flat" style="height:8%"></div>
+      </div>
+      <div class="wave-caption">
+        <span>Ruido detectado</span>
+        <span>Vuelta a la calma — automático</span>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="label">01 — Se detecta</div>
+        <div class="value">Umbral de ruido superado</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="label">02 — Se avisa</div>
+        <div class="value">Aviso en pantalla, en segundos</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="label">03 — Se retira solo</div>
+        <div class="value">Vuelta al contenido habitual</div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit">
+        <div class="glyph">
+          <svg viewBox="0 0 26 26" fill="none"><path d="M13 3 L13 13 L20 17" stroke="#f0703f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13" cy="13" r="10.5" stroke="#f0703f" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <h3>Inmediato</h3>
+          <p>Del ruido detectado al aviso en pantalla, en segundos. Nadie tiene que estar pendiente para que funcione.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="glyph">
+          <svg viewBox="0 0 26 26" fill="none"><path d="M5 13a8 8 0 0 1 13.5-5.8M21 13a8 8 0 0 1-13.5 5.8" stroke="#f0703f" stroke-width="2" stroke-linecap="round"/><path d="M18.5 4v4h-4M7.5 22v-4h4" stroke="#f0703f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Autónomo</h3>
+          <p>El aviso se retira solo cuando corresponde. Nunca se queda una alerta olvidada en pantalla.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="glyph">
+          <svg viewBox="0 0 26 26" fill="none"><rect x="3.5" y="14" width="4" height="8.5" rx="1" stroke="#f0703f" stroke-width="2"/><rect x="11" y="8" width="4" height="14.5" rx="1" stroke="#f0703f" stroke-width="2"/><rect x="18.5" y="3.5" width="4" height="19" rx="1" stroke="#f0703f" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <h3>Escalable</h3>
+          <p>Añadir una sala nueva es cuestión de minutos desde un panel visual, sin tocar una línea de código.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="cta-text">¿Ya tienes HikCentral y Digital Signage? Ya tienes el 80% del camino hecho.</div>
+      <div class="cta-contact">
+        info@masscomm.es<br>
+        +34 941 24 06 94<br>
+        www.masscomm.es
+      </div>
+    </div>
+
+    <div class="services-line">
+      <span>Networking</span>
+      <span>Comunicaciones</span>
+      <span>Audiovisuales</span>
+      <span>Seguridad</span>
+    </div>
+
+  </div>
+</body>
+</html>

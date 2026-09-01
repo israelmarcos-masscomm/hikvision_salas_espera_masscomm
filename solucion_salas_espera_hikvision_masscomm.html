@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Éxito & Infografía: hik-ruido-signage - MassComm Innova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e2e8f0;
+        }
+        .step-connector::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            width: 20px;
+            height: 2px;
+            background-color: #3b82f6;
+            z-index: 10;
+        }
+        @media (max-width: 768px) {
+            .step-connector::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xl text-white shadow-md">
+                    M
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white">MassComm <span class="text-blue-400">Innova</span></h1>
+                    <p class="text-xs text-slate-400">Caso de Éxito & Solución IoT: hik-ruido-signage</p>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#resumen" class="text-slate-300 hover:text-blue-400 transition-colors">Resumen</a>
+                <a href="#desafio" class="text-slate-300 hover:text-blue-400 transition-colors">Desafío</a>
+                <a href="#arquitectura" class="text-slate-300 hover:text-blue-400 transition-colors">Arquitectura</a>
+                <a href="#metricas" class="text-slate-300 hover:text-blue-400 transition-colors">Métricas & ROI</a>
+                <a href="#escalabilidad" class="text-slate-300 hover:text-blue-400 transition-colors">Escalabilidad</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <section id="resumen" class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                        <span>🔊</span> Detección Acústica + Digital Signage
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                        Transformación de la Contaminación Acústica en Señalización Digital Reactiva
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Solución IoT inteligente desarrollada para el <strong>Hospital de Burgos</strong> en colaboración con <strong>Telycal</strong>. Interconecta la captación electroacústica ambiental con la infraestructura de <strong>HikCentral Professional</strong> para emitir alertas automáticas e instantáneas de silencio en pantallas comerciales.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <div class="bg-slate-800/80 px-4 py-2 rounded-lg border border-slate-700/50">
+                            <span class="text-xs text-slate-400 block">Cliente / Entorno</span>
+                            <span class="font-semibold text-white">Hospital de Burgos / Telycal</span>
+                        </div>
+                        <div class="bg-slate-800/80 px-4 py-2 rounded-lg border border-slate-700/50">
+                            <span class="text-xs text-slate-400 block">Tecnología Principal</span>
+                            <span class="font-semibold text-white">Node.js + OpenAPI HikCentral + 2N AudioKit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700/60 shadow-inner space-y-4">
+                    <h3 class="text-lg font-bold text-blue-300 border-b border-slate-700 pb-2">Impacto Clave del Proyecto</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300">Tiempo de Reacción</span>
+                            <span class="text-emerald-400 font-bold">&lt; 2 segundos</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300">Intervención Manual del Staff</span>
+                            <span class="text-emerald-400 font-bold">Reducción del 100%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300">Restauración de Pantalla</span>
+                            <span class="text-emerald-400 font-bold">100% Automatizada</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-teal-400 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="desafio" class="space-y-6">
+            <div class="border-l-4 border-blue-600 pl-4">
+                <h2 class="text-2xl font-bold text-slate-900">El Desafío Operativo en Entornos Sanitarios</h2>
+                <p class="text-slate-600 text-sm mt-1">El impacto del ruido ambiente en las salas de espera hospitalarias y la necesidad de automatización inmediata.</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed">
+                En entornos de alta afluencia como las salas de espera del Hospital de Burgos, la acumulación indeseada de ruido incrementa el estrés en los pacientes e interfiere con la operativa del personal médico. Las soluciones tradicionales presentan graves deficiencias de gestión y eficacia:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+                        ⚠️
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Intervención Verbal Constante</h3>
+                    <p class="text-sm text-slate-600">El personal sanitario debe interrumpir sus labores de atención para pedir silencio de forma manual, generando fricción y desgaste profesional.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+                        📜
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Cartelería Estática Ineficaz</h3>
+                    <p class="text-sm text-slate-600">Los carteles estáticos de "Silencio" pierden visibilidad e impacto visual rápidamente por falta de dinamismo y estímulo en tiempo real.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-700 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+                        🛑
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Riesgo de Pantallas Congeladas</h3>
+                    <p class="text-sm text-slate-600">La modificación manual de la señalización digital suele provocar olvidos al restaurar la parrilla informativa o corporativa base tras el aviso.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="arquitectura" class="space-y-6">
+            <div class="border-l-4 border-blue-600 pl-4">
+                <h2 class="text-2xl font-bold text-slate-900">Arquitectura de Integración & Flujo IoT</h2>
+                <p class="text-slate-600 text-sm mt-1">Interconexión punto a punto sin intervención humana entre sensores acústicos y señalización visual.</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed">
+                El motor <strong>hik-ruido-signage</strong> es un microservicio desarrollado en Node.js (Express) que coexiste en la infraestructura Windows del cliente. Actúa como puente entre la captación física de decibelios y el motor de despliegue visual de HikCentral Professional via OpenAPI Artemis.
+            </p>
+
+            <div class="glass-card p-6 rounded-xl shadow-sm space-y-6 border border-slate-200">
+                <h3 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-3">Ciclo de Vida de Evento en 4 Etapas</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 relative">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">Paso 1</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">Captación Sonora</h4>
+                        <p class="text-xs text-slate-600 mt-1">2N AudioKit evalúa la presión sonora continua. Al superar el umbral, emite un trigger HTTP hacia HikCentral.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 relative">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">Paso 2</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">Evento HikCentral</h4>
+                        <p class="text-xs text-slate-600 mt-1">HikCentral genera un Generic Event (código 195) y lo envía vía Push HTTP (/eventRcv) al middleware.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 relative">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">Paso 3</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">Interrupción Cut-In</h4>
+                        <p class="text-xs text-slate-600 mt-1">El middleware valida la regla, resuelve la IP asignada e invoca quickPublish para interrumpir el monitor.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">Paso 4</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">Retorno Autónomo</h4>
+                        <p class="text-xs text-slate-600 mt-1">Transcurrido el temporizador programado, republica el contenido base de forma transparente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Respuesta Activa ante Picos de Ruido</h3>
+                        <p class="text-xs text-slate-500 mt-1">Comportamiento dinámico de la alerta visual al cruzar el umbral acústico predefinido (70 dB).</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="noiseChart"></canvas>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        Simulación de evento: Detección a 82 dB ➔ Disparo de aviso en &lt;2s ➔ Retorno a parrilla normal al bajar el sonido.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Desglose de Latencia del Middleware</h3>
+                        <p class="text-xs text-slate-500 mt-1">Distribución del tiempo de respuesta total (&lt;1000 milisegundos en pruebas de laboratorio).</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="latencyChart"></canvas>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        Procesamiento ultra optimizado con deduplicación de eventos en ventana temporal de 60 segundos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="metricas" class="space-y-6">
+            <div class="border-l-4 border-blue-600 pl-4">
+                <h2 class="text-2xl font-bold text-slate-900">Métricas Comparativas & Retorno de Inversión</h2>
+                <p class="text-slate-600 text-sm mt-1">Comparativa directa entre la operativa manual previa y el modelo automatizado de MassComm.</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed">
+                El despliegue del sistema <strong>hik-ruido-signage</strong> transforma radicalmente los KPIs de atención en el hospital, maximizando la eficiencia de la plantilla médica y asegurando el correcto uso de los canales visuales.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-2 glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Comparativa Operativa Directa</h3>
+                        <p class="text-xs text-slate-500 mt-1">Comparación de tiempos de reacción, trabajo manual y tasa de errores.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Reacción Promedio</div>
+                        <div class="text-2xl font-extrabold text-blue-600 mt-1">&lt; 2 Segundos</div>
+                        <p class="text-xs text-slate-600 mt-1">Frente a más de 3 minutos de retardo promedio en avisos verbales manuales.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Eficiencia de Personal</div>
+                        <div class="text-2xl font-extrabold text-emerald-600 mt-1">100% Liberado</div>
+                        <p class="text-xs text-slate-600 mt-1">El personal sanitario no pierde tiempo pidiendo silencio en salas de espera.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Administración Web</div>
+                        <div class="text-2xl font-extrabold text-teal-600 mt-1">Puerto :8090</div>
+                        <p class="text-xs text-slate-600 mt-1">Gestión visual e inmediata de IPs, materiales e intervalos sin editar código.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-2">Matriz de Especificaciones Técnicas y Retos Solucionados</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                            <th class="p-3">Componente / Área</th>
+                            <th class="p-3">Desafío Técnico Encontrado</th>
+                            <th class="p-3">Solución de Ingeniería Aplicada</th>
+                            <th class="p-3">Beneficio Directo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-900">Autenticación OpenAPI</td>
+                            <td class="p-3 text-slate-600">Firmas HMAC-SHA256 con requerimientos de cabecera x-ca-nonce.</td>
+                            <td class="p-3 text-slate-600">Ajuste de algoritmo de firma digital estricto en hikSignature.js.</td>
+                            <td class="p-3 text-emerald-700 font-medium">Seguridad robusta y autenticación sin fallos.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-900">Control de Pantallas</td>
+                            <td class="p-3 text-slate-600">El comando releasePlan/cancel no restauraba reproductores en bucle.</td>
+                            <td class="p-3 text-slate-600">Republicación explícita del material base al agotar el temporizador.</td>
+                            <td class="p-3 text-emerald-700 font-medium">Garantía total de retorno a la normalidad visual.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-900">Detección Duplicada</td>
+                            <td class="p-3 text-slate-600">Envío de múltiples alertas continuas por picos de ruido prolongados.</td>
+                            <td class="p-3 text-slate-600">Ventana temporal de deduplicación de 60s por eventId.</td>
+                            <td class="p-3 text-emerald-700 font-medium">Evita parpadeos y saturación en los displays.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-900">Gestión de Zonas</td>
+                            <td class="p-3 text-slate-600">Necesidad de reconfigurar IPs o duraciones sin reiniciar el servidor.</td>
+                            <td class="p-3 text-slate-600">Panel web local /admin que actualiza dinámicamente config/reglas.json.</td>
+                            <td class="p-3 text-emerald-700 font-medium">Autonomía total para el equipo de mantenimiento.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="escalabilidad" class="space-y-6">
+            <div class="border-l-4 border-blue-600 pl-4">
+                <h2 class="text-2xl font-bold text-slate-900">Escalabilidad Industrial & Aplicación Multisectorial</h2>
+                <p class="text-slate-600 text-sm mt-1">Potencial de exportación de la tecnología a nuevos sectores verticales.</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed">
+                La arquitectura modular del middleware desacoplado permite extrapolar la solución desde el entorno hospitalario hacia múltiples verticales industriales y comerciales donde la comunicación reactiva sea crítica.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="glass-card p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Índice de Aplicabilidad Sectorial</h3>
+                        <p class="text-xs text-slate-500 mt-1">Nivel de adaptación tecnológica según el entorno de despliegue.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="font-bold text-slate-900 flex items-center gap-2">
+                            <span>📚</span> Bibliotecas & Universidades
+                        </div>
+                        <p class="text-xs text-slate-600 mt-2">Avisos automáticos de silencio en salas de estudio al superar el umbral de decibelios tolerado.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="font-bold text-slate-900 flex items-center gap-2">
+                            <span>🏢</span> Corporativo & Open Spaces
+                        </div>
+                        <p class="text-xs text-slate-600 mt-2">Concienciación acústica en oficinas compartidas sin alterar la dinámica de trabajo.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="font-bold text-slate-900 flex items-center gap-2">
+                            <span>✈️</span> Terminales de Pasajeros
+                        </div>
+                        <p class="text-xs text-slate-600 mt-2">Interrupción prioritaria de pantallas para avisos de evacuación o alertas de emergencia en tiempo real.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="font-bold text-slate-900 flex items-center gap-2">
+                            <span>🏭</span> Entornos Industriales
+                        </div>
+                        <p class="text-xs text-slate-600 mt-2">Advertencias visuales sobre el uso obligatorio de protección auditiva al activar maquinaria ruidosa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl border border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <h3 class="text-2xl font-extrabold text-white">¿Listo para Automatizar la Gestión Ambiental?</h3>
+                <p class="text-slate-400 text-sm max-w-xl">
+                    Solicite una demostración personalizada con nuestro equipo de ingeniería y optimice la comunicación visual de sus instalaciones.
+                </p>
+            </div>
+            <div class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition-colors shadow-lg cursor-pointer text-center">
+                Contactar con MassComm
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 mt-16 py-8 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+                <div class="font-bold text-white text-sm mb-2">MassComm Innova</div>
+                <p>C/ Rosa Chacel 36, Nave 22, P21 · 26007 Logroño (La Rioja)</p>
+                <p class="mt-1">Tel: +34 941 24 06 94 | info@masscomm.es</p>
+            </div>
+            <div>
+                <div class="font-bold text-white text-sm mb-2">Cobertura Territorial</div>
+                <p>Delegaciones: Norte y Baleares · Centro y Canarias · Cataluña, Andorra y Huesca · Levante y Andalucía · Portugal</p>
+            </div>
+            <div class="text-right">
+                <p class="font-bold text-white text-sm mb-2">Integración Partner</p>
+                <p>Compatible con HikCentral Professional v3.1.x & 2N Telecommunications</p>
+                <p class="text-slate-500 mt-2">© 2026 MassComm Innova. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var ctxNoise = document.getElementById('noiseChart').getContext('2d');
+            new Chart(ctxNoise, {
+                type: 'line',
+                data: {
+                    labels: ['08:00', '08:05', '08:10', ['08:15', '(Pico dB)'], ['08:16', '(Alerta)'], '08:17', ['08:18', '(Normal)'], '08:20'],
+                    datasets: [
+                        {
+                            label: 'Nivel Sonoro (dB)',
+                            data: [52, 55, 58, 82, 78, 62, 54, 51],
+                            borderColor: '#2563eb',
+                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 3,
+                            pointRadius: 5,
+                            pointBackgroundColor: '#2563eb'
+                        },
+                        {
+                            label: 'Umbral Configurado (70 dB)',
+                            data: [70, 70, 70, 70, 70, 70, 70, 70],
+                            borderColor: '#e11d48',
+                            borderDash: [5, 5],
+                            borderWidth: 2,
+                            fill: false,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                        return label.join(' ');
+                                    } else {
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: 40,
+                            max: 90,
+                            title: {
+                                display: true,
+                                text: 'Decibelios (dB)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var ctxLatency = document.getElementById('latencyChart').getContext('2d');
+            new Chart(ctxLatency, {
+                type: 'doughnut',
+                data: {
+                    labels: [['Captación 2N', 'AudioKit'], ['Evento Push', 'HikCentral'], ['Procesamiento', 'Middleware'], ['Publicación', 'Display Visual']],
+                    datasets: [{
+                        data: [200, 300, 100, 400],
+                        backgroundColor: ['#2563eb', '#0d9488', '#f59e0b', '#059669'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                        return label.join(' ');
+                                    } else {
+                                        return label;
+                                    }
+                                },
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + ' ms';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            var ctxComparison = document.getElementById('comparisonChart').getContext('2d');
+            new Chart(ctxComparison, {
+                type: 'bar',
+                data: {
+                    labels: [['Tiempo Reacción', '(segundos)'], ['Carga Manual', 'Staff (%)'], ['Tasa Errores', 'Restauración (%)'], ['Tiempo Config.', 'Cambios (min)']],
+                    datasets: [
+                        {
+                            label: 'Escenario Tradicional (Manual)',
+                            data: [180, 100, 35, 45],
+                            backgroundColor: '#f43f5e'
+                        },
+                        {
+                            label: 'Solución MassComm Innova',
+                            data: [2, 0, 0, 1],
+                            backgroundColor: '#10b981'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                        return label.join(' ');
+                                    } else {
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            var ctxRadar = document.getElementById('radarChart').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: [['Entornos', 'Sanitarios'], ['Salas de', 'Lectura'], ['Oficinas', 'Open Space'], ['Terminales', 'Transporte'], ['Entornos', 'Industriales']],
+                    datasets: [{
+                        label: 'Índice de Aplicabilidad (%)',
+                        data: [98, 90, 85, 92, 95],
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                        borderColor: '#2563eb',
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                        return label.join(' ');
+                                    } else {
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

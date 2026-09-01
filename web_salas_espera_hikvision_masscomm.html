@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Éxito & Kit de Marketing - hik-ruido-signage | MassComm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e2e8f0;
+        }
+        .tab-active {
+            border-bottom: 3px solid #2563eb;
+            color: #2563eb;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-black text-xl text-white shadow-lg">
+                    M
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-lg font-bold tracking-tight text-white">MassComm <span class="text-blue-400">Innova</span></h1>
+                        <span class="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-[10px] px-2 py-0.5 rounded-full font-semibold">v01.26</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Caso de Éxito, Kit de Marketing & Herramientas de Ventas</p>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <nav class="flex space-x-1 bg-slate-800/80 p-1 rounded-xl text-xs sm:text-sm font-medium border border-slate-700/50">
+                <button onclick="switchTab('caso-exito')" id="tab-caso-exito" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">
+                    📄 Caso de Éxito
+                </button>
+                <button onclick="switchTab('panfleto')" id="tab-panfleto" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">
+                    🎨 Kit Marketing & Panfleto
+                </button>
+                <button onclick="switchTab('roi')" id="tab-roi" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">
+                    🧮 Calculadora ROI
+                </button>
+                <button onclick="switchTab('tecnico')" id="tab-tecnico" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">
+                    ⚙️ Ficha Técnica
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-8">
+
+        <!-- Executive Banner -->
+        <section class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-2 space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                        <span>🔊</span> Proyecto: hik-ruido-signage | Autor: Israel Marcos Caro
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                        Señalización Digital Reactiva para Detección Acústica
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Solución IoT desarrollada por <strong>MassComm Innova</strong> para el <strong>Hospital de Burgos</strong> en colaboración con el integrador <strong>Telycal</strong>. Interconecta la captación electroacústica ambiental de precisión con <strong>HikCentral Professional</strong> para emitir avisos prioritarios de silencio en pantallas comerciales sin intervención humana.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <div class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/50 text-xs">
+                            <span class="text-slate-400 block text-[10px]">Cliente / Integrador</span>
+                            <span class="font-semibold text-white">Hospital de Burgos / Telycal</span>
+                        </div>
+                        <div class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/50 text-xs">
+                            <span class="text-slate-400 block text-[10px]">Stack Tecnológico</span>
+                            <span class="font-semibold text-white">Node.js + OpenAPI HikCentral + 2N AudioKit</span>
+                        </div>
+                        <div class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/50 text-xs">
+                            <span class="text-slate-400 block text-[10px]">Gestión Web</span>
+                            <span class="font-semibold text-blue-300">http://localhost:8090/admin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KPI Callouts -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 text-center">
+                        <span class="text-xs text-slate-400 block mb-1">Tiempo Respuesta</span>
+                        <span class="text-2xl font-black text-emerald-400">&lt; 2s</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">Reacción instantánea</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 text-center">
+                        <span class="text-xs text-slate-400 block mb-1">Carga Asistencial</span>
+                        <span class="text-2xl font-black text-blue-400">0%</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">100% Automatizado</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 text-center">
+                        <span class="text-xs text-slate-400 block mb-1">Retorno Normal</span>
+                        <span class="text-2xl font-black text-teal-400">100%</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">Sin pantallas colgadas</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 text-center">
+                        <span class="text-xs text-slate-400 block mb-1">Filtro Antiruido</span>
+                        <span class="text-2xl font-black text-amber-400">60s</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">Deduplicación activa</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 1: CASO DE ÉXITO COMPLETO -->
+        <div id="content-caso-exito" class="tab-content space-y-8">
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-3 mb-4">
+                    1. Contexto y Desafío Operativo en el Hospital de Burgos
+                </h3>
+                <p class="text-slate-700 text-sm leading-relaxed mb-4">
+                    En las salas de espera de alta afluencia, la acumulación ininterrumpida de ruido genera estrés elevado en los pacientes y perturba el desempeño del personal médico. Las alternativas tradicionales presentan graves deficiencias de efectividad y control:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="w-8 h-8 bg-rose-100 text-rose-600 rounded-lg flex items-center justify-center font-bold text-sm mb-2">⚠️</div>
+                        <h4 class="font-bold text-slate-900 text-sm">Intervención Manual Ineficiente</h4>
+                        <p class="text-xs text-slate-600 mt-1">El personal sanitario se ve obligado a pausar sus funciones clínicas para pedir silencio verbalmente, generando desgaste.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-sm mb-2">📜</div>
+                        <h4 class="font-bold text-slate-900 text-sm">Cartelería Estática Ignorada</h4>
+                        <p class="text-xs text-slate-600 mt-1">Los avisos permanentes pierden impacto visual rápidamente debido a la acostumbramientos del público.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="w-8 h-8 bg-slate-200 text-slate-700 rounded-lg flex items-center justify-center font-bold text-sm mb-2">🛑</div>
+                        <h4 class="font-bold text-slate-900 text-sm">Riesgo de Bloqueo Visual</h4>
+                        <p class="text-xs text-slate-600 mt-1">Los cambios manuales de pantalla frecuentemente provocan descuidos, dejando avisos de alerta congelados indefinidamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arquitectura de Integración Paso a Paso -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                <h3 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-3">
+                    2. Arquitectura de Integración & Flujo IoT en 4 Etapas
+                </h3>
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    El microservicio <strong>hik-ruido-signage</strong> en Node.js se ejecuta en el propio servidor Windows de HikCentral. Se encarga de procesar los eventos electroacústicos y coordinar los comandos OpenAPI Artemis en milisegundos.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-2">
+                    <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-blue-600 border-t border-r border-b border-slate-200">
+                        <span class="text-[10px] font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">Etapa 1: Captación</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">2N AudioKit (Gold)</h4>
+                        <p class="text-xs text-slate-600 mt-1">El micrófono mide la presión acústica continua. Al sobrepasar el umbral (ej. 70 dB), lanza un trigger HTTP hacia HikCentral.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-indigo-600 border-t border-r border-b border-slate-200">
+                        <span class="text-[10px] font-bold text-indigo-600 bg-indigo-100 px-2 py-0.5 rounded">Etapa 2: Evento</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">HikCentral (HCP)</h4>
+                        <p class="text-xs text-slate-600 mt-1">Genera un Generic Event (ID 195) y lo notifica vía Push HTTP (`/eventRcv`) al middleware con firma HMAC-SHA256.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-amber-500 border-t border-r border-b border-slate-200">
+                        <span class="text-[10px] font-bold text-amber-600 bg-amber-100 px-2 py-0.5 rounded">Etapa 3: Interrupción</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">Middleware Cut-In</h4>
+                        <p class="text-xs text-slate-600 mt-1">Valida la IP mapeada en `reglas.json`, e invoca `quickPublish` para interrumpir inmediatamente el display.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-emerald-600 border-t border-r border-b border-slate-200">
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded">Etapa 4: Retorno</span>
+                        <h4 class="font-bold text-slate-900 mt-2 text-sm">Restauración Autónoma</h4>
+                        <p class="text-xs text-slate-600 mt-1">Tras agotarse el temporizador programado (ej. 10s), republica automáticamente la parrilla corporativa base.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Charts Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Simulación de Evento Acoustico & Reacción</h4>
+                    <p class="text-xs text-slate-500 mb-4">Comportamiento del sistema ante un pico puntual de decibelios (&gt;70 dB).</p>
+                    <div class="chart-container">
+                        <canvas id="noiseChart"></canvas>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Desglose de Latencia del Proceso (&lt;1000ms Total)</h4>
+                    <p class="text-xs text-slate-500 mb-4">Distribución del tiempo de respuesta por componente del ecosistema.</p>
+                    <div class="chart-container">
+                        <canvas id="latencyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h4 class="font-bold text-slate-900 text-base mb-1">Comparativa Directa: Operativa Manual vs. MassComm Automatizado</h4>
+                <p class="text-xs text-slate-500 mb-4">Impacto directo en KPIs de tiempo de respuesta, horas de personal y errores de pantalla.</p>
+                <div class="chart-container">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB 2: KIT DE MARKETING Y PANFLETO -->
+        <div id="content-panfleto" class="tab-content hidden space-y-8">
+
+            <!-- Intro for Marketing Team -->
+            <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 text-slate-800 space-y-2">
+                <h3 class="text-lg font-bold text-blue-900 flex items-center gap-2">
+                    <span>💡</span> Guía para el Departamento de Marketing y Diseño
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    Esta sección contiene la estructura de contenidos preformateada para maquetar un **folleto comercial (A4/A5 doble cara)** o una **infografía digital de producto**. Incluye un generador de textos según el tono deseado y prompts específicos para el equipo de diseño gráfico.
+                </p>
+            </div>
+
+            <!-- Tone Selector & Copy Generator -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-200 pb-4">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Banco de Textos Comercial & Claims</h4>
+                        <p class="text-xs text-slate-500">Selecciona el enfoque comunicativo para adaptar los mensajes clave.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="setTone('comercial')" id="btn-tone-comercial" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-sm">
+                            Comercial / Ventas
+                        </button>
+                        <button onclick="setTone('ejecutivo')" id="btn-tone-ejecutivo" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
+                            Ejecutivo / C-Level
+                        </button>
+                        <button onclick="setTone('tecnico')" id="btn-tone-tecnico" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
+                            Técnico / Integradores
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-[10px] font-bold uppercase text-slate-400 block mb-1">Titular Principal Sugerido</span>
+                        <div id="copy-headline" class="font-bold text-slate-900 text-base">
+                            Transformación de la Contaminación Acústica en Señalización Digital Reactiva
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-[10px] font-bold uppercase text-slate-400 block mb-1">Subtítulo / Claim de Valor</span>
+                        <div id="copy-subline" class="text-xs text-slate-700 font-medium">
+                            Automatización IoT integral que elimina el ruido ambiental en salas de espera sin requerir la intervención del personal sanitario.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <span class="text-[10px] font-bold uppercase text-slate-400 block mb-2">Puntos de Valor Clave (Bullets)</span>
+                    <ul id="copy-bullets" class="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
+                        <li>Respuesta ultra-rápida en menos de 2 segundos ante picos de ruido superiores a 70 dB.</li>
+                        <li>Retorno 100% automatizado a la programación base corporativa tras finalizar el aviso.</li>
+                        <li>Panel web autónomo para ajustar zonas, IPs y tiempos sin necesidad de soporte informático.</li>
+                        <li>Cero interrupciones en la labor asistencial de médicos y enfermeros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Brochure Visual Studio (Cara A / Cara B Previewer) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- Cara A: Portada -->
+                <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-xl border border-slate-800 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">DISEÑO DE FOLLETO · CARA A (PORTADA)</span>
+                            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Formato A4/A5</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="text-xs text-slate-400 font-semibold">MASSCOMM INNOVA — TU ALIADO TECH</div>
+                            <h3 class="text-2xl font-black text-white leading-tight">
+                                Control Acústico Inteligente en Pantallas de Digital Signage
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Solución IoT pionera para salas de espera hospitalarias que sustituye los avisos verbales por alertas visuales dinámicas instantáneas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/60 space-y-3">
+                        <div class="text-[11px] font-bold text-blue-300 uppercase">Dirección de Arte y Arte Gráfico Recomendado:</div>
+                        <p class="text-xs text-slate-300 italic leading-relaxed">
+                            "Fotografía panorámica de una sala de espera moderna de hospital en tono azul cálido. En primer plano, una pantalla de señalización digital muestra un icono estilizado de silencio en rojo/blanco, conectada con líneas de luz vectoriales transparentes hacia un micrófono ambiental discreto en el techo."
+                        </p>
+                        <div class="flex items-center gap-4 pt-2 border-t border-slate-700 text-[10px] text-slate-400">
+                            <span>✔ Logo MassComm Innova</span>
+                            <span>✔ Powered by HikCentral</span>
+                            <span>✔ Integrated with 2N</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cara B: Reverso -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center border-b border-slate-200 pb-3 mb-3">
+                            <span class="text-xs font-bold text-slate-900 uppercase tracking-widest">DISEÑO DE FOLLETO · CARA B (REVERSO)</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Especificaciones</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-900 text-sm">4 Pilares Tecnológicos de la Solución</h4>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <div class="font-bold text-slate-900">1. AudioKit 2N</div>
+                                    <div class="text-[11px] text-slate-600">Captación electroacústica continua con umbrales dBA.</div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <div class="font-bold text-slate-900">2. OpenAPI Artemis</div>
+                                    <div class="text-[11px] text-slate-600">Autenticación HMAC-SHA256 en HikCentral.</div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <div class="font-bold text-slate-900">3. Middleware Node</div>
+                                    <div class="text-[11px] text-slate-600">Gestión de temporizadores y deduplicación 60s.</div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <div class="font-bold text-slate-900">4. Panel Web /admin</div>
+                                    <div class="text-[11px] text-slate-600">Mapeo IP-Pantalla-Material sin editar código.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 text-center space-y-2">
+                        <div class="text-xs font-bold text-blue-900">¿Listo para optimizar la gestión ambiental de sus instalaciones?</div>
+                        <div class="text-[11px] text-slate-600">Solicite una demostración en vivo a nuestro departamento de ingeniería.</div>
+                        <div class="text-xs font-bold text-blue-600 pt-1">
+                            +34 941 24 06 94 | info@masscomm.es | www.masscomm.es
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TAB 3: CALCULADORA DE ROI -->
+        <div id="content-roi" class="tab-content hidden space-y-8">
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                <div class="border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-bold text-slate-900">Calculadora Interactiva de Retorno de Inversión (ROI)</h3>
+                    <p class="text-xs text-slate-500 mt-1">Ajusta los parámetros operativos de la instalación sanitaria para cuantificar el ahorro de tiempo y costes.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center pt-2">
+                    <!-- Controls -->
+                    <div class="space-y-4 lg:col-span-1">
+                        <div>
+                            <label class="text-xs font-bold text-slate-700 block mb-1">Número de Salas de Espera / Zonas:</label>
+                            <input type="range" id="input-rooms" min="1" max="30" value="8" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateROI()">
+                            <span id="val-rooms" class="text-xs font-bold text-blue-600">8 Salas</span>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-bold text-slate-700 block mb-1">Picos de Ruido Detecciones / Día por Sala:</label>
+                            <input type="range" id="input-events" min="2" max="50" value="15" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateROI()">
+                            <span id="val-events" class="text-xs font-bold text-blue-600">15 Eventos / día</span>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-bold text-slate-700 block mb-1">Tiempo de Gestión Manual por Evento (minutos):</label>
+                            <input type="range" id="input-time" min="1" max="10" value="3" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateROI()">
+                            <span id="val-time" class="text-xs font-bold text-blue-600">3 Minutos</span>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-bold text-slate-700 block mb-1">Coste Hora Medio Personal Sanitario (€/h):</label>
+                            <input type="range" id="input-cost" min="15" max="60" value="28" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateROI()">
+                            <span id="val-cost" class="text-xs font-bold text-blue-600">28 €/h</span>
+                        </div>
+                    </div>
+
+                    <!-- Output Cards -->
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+                            <span class="text-xs text-slate-500 font-semibold uppercase block">Horas Sanitarias Liberadas / Mes</span>
+                            <span id="roi-hours" class="text-3xl font-black text-blue-600 block my-2">180 hrs</span>
+                            <span class="text-[11px] text-slate-600">Tiempo de atención recuperado para consultas.</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+                            <span class="text-xs text-slate-500 font-semibold uppercase block">Ahorro Económico Estimado / Año</span>
+                            <span id="roi-savings" class="text-3xl font-black text-emerald-600 block my-2">60.480 €</span>
+                            <span class="text-[11px] text-slate-600">Optimización del gasto operativo indirecto.</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+                            <span class="text-xs text-slate-500 font-semibold uppercase block">Reducción Intervención Humana</span>
+                            <span class="text-3xl font-black text-teal-600 block my-2">100%</span>
+                            <span class="text-[11px] text-slate-600">Proceso automatizado de principio a fin.</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+                            <span class="text-xs text-slate-500 font-semibold uppercase block">Tasa de Pantallas Desactualizadas</span>
+                            <span class="text-3xl font-black text-rose-500 block my-2">0%</span>
+                            <span class="text-[11px] text-slate-600">Garantía total de restauración de parrilla base.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applicability Radar -->
+            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h4 class="font-bold text-slate-900 text-base mb-1">Índice de Aplicabilidad Multisectorial</h4>
+                <p class="text-xs text-slate-500 mb-4">Potencial de extensión de la tecnología hik-ruido-signage hacia otros entornos verticales.</p>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB 4: FICHA TÉCNICA -->
+        <div id="content-tecnico" class="tab-content hidden space-y-8">
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                <div class="border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-bold text-slate-900">Matriz de Desafíos Técnicos Resueltos en la Integración</h3>
+                    <p class="text-xs text-slate-500 mt-1">Soluciones de ingeniería desarrolladas para subsanar inconsistencias OpenAPI entre HikCentral v3.1 y entorno de producción.</p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                                <th class="p-3">Área Técnica</th>
+                                <th class="p-3">Hallazgo / Desafío Detectado</th>
+                                <th class="p-3">Solución Aplicada en Middleware</th>
+                                <th class="p-3">Beneficio Comercial</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">Firma AK/SK</td>
+                                <td class="p-3 text-slate-600">El calculo HMAC-SHA256 exigia la cabecera `x-ca-nonce` en firma.</td>
+                                <td class="p-3 text-slate-600">Ajuste de algoritmo estricto en `hikSignature.js`.</td>
+                                <td class="p-3 text-emerald-700 font-medium">Autenticación segura sin fallos.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">Puerto Gateway</td>
+                                <td class="p-3 text-slate-600">Escucha en puerto 443 (Nginx proxy) en lugar de puerto 8208.</td>
+                                <td class="p-3 text-slate-600">Reorientación base a `https://localhost:443`.</td>
+                                <td class="p-3 text-emerald-700 font-medium">Compatibilidad nativa con servidor.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">Paginación API</td>
+                                <td class="p-3 text-slate-600">Búsqueda terminales es 0-indexed; materiales es 1-indexed.</td>
+                                <td class="p-3 text-slate-600">Normalización de iteración por tipo de endpoint.</td>
+                                <td class="p-3 text-emerald-700 font-medium">Localización fiable de recursos.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">Llamada quickPublish</td>
+                                <td class="p-3 text-slate-600">`materialNo` requiere tipo Number y `durationType: "selfDefine"`.</td>
+                                <td class="p-3 text-slate-600">Casting de tipos explícito en cliente API.</td>
+                                <td class="p-3 text-emerald-700 font-medium">Ejecución inmediata de cut-in.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">Restauración Visual</td>
+                                <td class="p-3 text-slate-600">`releasePlan/cancel` no restauraba reproductores en bucle.</td>
+                                <td class="p-3 text-slate-600">Republicación explícita del material base al agotar timer.</td>
+                                <td class="p-3 text-emerald-700 font-medium">Garantía total de retorno visual.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">Gestión de Eventos</td>
+                                <td class="p-3 text-slate-600">Eventos continuos por ruidos de larga duración.</td>
+                                <td class="p-3 text-slate-600">Deduplicación por `eventId` en ventana de 60 segundos.</td>
+                                <td class="p-3 text-emerald-700 font-medium">Evita parpadeos en pantalla.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Production Checklist -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                <h4 class="font-bold text-slate-900 text-base border-b border-slate-200 pb-2">Checklist de Recomendaciones para Despliegue en Producción</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg">
+                        <span class="text-blue-600 font-bold">1</span>
+                        <div>
+                            <div class="font-bold text-slate-900">Usuario de Permisos Reducidos</div>
+                            <div class="text-slate-600">Sustituir usuario `admin` por uno dedicado únicamente a Digital Signage y eventos.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg">
+                        <span class="text-blue-600 font-bold">2</span>
+                        <div>
+                            <div class="font-bold text-slate-900">Persistencia con NSSM</div>
+                            <div class="text-slate-600">Registrar `npm start` como servicio de Windows para autostart en reinicios.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg">
+                        <span class="text-blue-600 font-bold">3</span>
+                        <div>
+                            <div class="font-bold text-slate-900">Seguridad Panel /admin</div>
+                            <div class="text-slate-600">Habilitar autenticación HTTP Basic si la consola se expone más allá de localhost.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg">
+                        <span class="text-blue-600 font-bold">4</span>
+                        <div>
+                            <div class="font-bold text-slate-900">Rotación de Logs</div>
+                            <div class="text-slate-600">Redirigir salidas de consola a archivos con rotación semanal para auditorías.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 mt-12 py-6 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <div class="font-bold text-white text-sm">MassComm Innova — Tu Aliado Integral en Soluciones Tech</div>
+                <p class="text-slate-500 mt-0.5">C/ Rosa Chacel 36, Nave 22 · 26007 Logroño (La Rioja) | +34 941 24 06 94</p>
+            </div>
+            <div class="text-right text-slate-500">
+                <p>© 2026 MassComm Innova. Caso de Éxito preparado para Departamento de Marketing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Charts & Logic -->
+    <script>
+        // Tab Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('text-slate-300');
+            });
+            document.getElementById('tab-' + tabId).classList.add('bg-blue-600', 'text-white');
+            document.getElementById('tab-' + tabId).classList.remove('text-slate-300');
+        }
+
+        // Copy Generator Tone Switcher
+        const tones = {
+            comercial: {
+                headline: "Transformación de la Contaminación Acústica en Señalización Digital Reactiva",
+                subline: "Automatización IoT integral que elimina el ruido ambiental en salas de espera sin requerir la intervención del personal sanitario.",
+                bullets: [
+                    "Respuesta ultra-rápida en menos de 2 segundos ante picos de ruido superiores a 70 dB.",
+                    "Retorno 100% automatizado a la programación base corporativa tras finalizar el aviso.",
+                    "Panel web autónomo para ajustar zonas, IPs y tiempos sin necesidad de soporte informático.",
+                    "Cero interrupciones en la labor asistencial de médicos y enfermeros."
+                ]
+            },
+            ejecutivo: {
+                headline: "Optimización Operativa y Eficiencia Ambiental en Infraestructuras Hospitalarias",
+                subline: "Sincronización autónoma de sensores electroacústicos con sistemas HikCentral para elevar la calidad percibida del servicio.",
+                bullets: [
+                    "Ahorro estimado superior a 180 horas mensuales de atención médica por centro.",
+                    "Garantía de cumplimiento normativo y reducción de niveles de estrés en salas de espera.",
+                    "Escalabilidad inmediata a cualquier número de zonas sin costes adicionales de desarrollo.",
+                    "Eliminación total del riesgo reputacional por pantallas congeladas o avisos desactualizados."
+                ]
+            },
+            tecnico: {
+                headline: "Arquitectura Middleware Middleware Node.js sobre HikCentral OpenAPI Artemis",
+                subline: "Integración punto a punto con sensores 2N AudioKit y displays comerciales Hikvision DS-D60E / DS-D6055UN.",
+                bullets: [
+                    "Suscripción Push HTTP `/eventRcv` con autenticación HMAC-SHA256 (AK/SK).",
+                    "Deduplicación activa de alertas con ventana de 60 segundos por `eventId`.",
+                    "Invocación de comando `quickPublish` y republicación explícita de seguridad.",
+                    "Configuración dinámica persistida en `config/reglas.json` mediante API REST local `:8090`."
+                ]
+            }
+        };
+
+        function setTone(toneKey) {
+            const data = tones[toneKey];
+            document.getElementById('copy-headline').innerText = data.headline;
+            document.getElementById('copy-subline').innerText = data.subline;
+            
+            const ul = document.getElementById('copy-bullets');
+            ul.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.innerText = b;
+                ul.appendChild(li);
+            });
+
+            ['comercial', 'ejecutivo', 'tecnico'].forEach(t => {
+                const btn = document.getElementById('btn-tone-' + t);
+                if (t === toneKey) {
+                    btn.className = 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200';
+                }
+            });
+        }
+
+        // ROI Calculator Logic
+        function updateROI() {
+            const rooms = parseInt(document.getElementById('input-rooms').value);
+            const events = parseInt(document.getElementById('input-events').value);
+            const time = parseInt(document.getElementById('input-time').value);
+            const cost = parseInt(document.getElementById('input-cost').value);
+
+            document.getElementById('val-rooms').innerText = rooms + " Salas";
+            document.getElementById('val-events').innerText = events + " Eventos / día";
+            document.getElementById('val-time').innerText = time + " Minutos";
+            document.getElementById('val-cost').innerText = cost + " €/h";
+
+            const monthlyEvents = rooms * events * 30;
+            const monthlyHoursSaved = Math.round((monthlyEvents * time) / 60);
+            const annualSavings = Math.round(monthlyHoursSaved * cost * 12);
+
+            document.getElementById('roi-hours').innerText = monthlyHoursSaved + " hrs";
+            document.getElementById('roi-savings').innerText = annualSavings.toLocaleString('es-ES') + " €";
+        }
+
+        // Chart Initialization
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // 1. Noise Timeline Chart
+            var ctxNoise = document.getElementById('noiseChart').getContext('2d');
+            new Chart(ctxNoise, {
+                type: 'line',
+                data: {
+                    labels: ['08:00', '08:05', '08:10', ['08:15', '(Pico dB)'], ['08:16', '(Alerta)'], '08:17', ['08:18', '(Normal)'], '08:20'],
+                    datasets: [
+                        {
+                            label: 'Nivel Sonoro (dB)',
+                            data: [52, 55, 58, 82, 78, 62, 54, 51],
+                            borderColor: '#2563eb',
+                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 3,
+                            pointRadius: 5
+                        },
+                        {
+                            label: 'Umbral Configurado (70 dB)',
+                            data: [70, 70, 70, 70, 70, 70, 70, 70],
+                            borderColor: '#e11d48',
+                            borderDash: [5, 5],
+                            borderWidth: 2,
+                            fill: false,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    let l = items[0].chart.data.labels[items[0].dataIndex];
+                                    return Array.isArray(l) ? l.join(' ') : l;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { min: 40, max: 90, title: { display: true, text: 'Decibelios (dB)' } }
+                    }
+                }
+            });
+
+            // 2. Latency Breakdown Chart
+            var ctxLatency = document.getElementById('latencyChart').getContext('2d');
+            new Chart(ctxLatency, {
+                type: 'doughnut',
+                data: {
+                    labels: [['Captación 2N', 'AudioKit'], ['Evento Push', 'HikCentral'], ['Procesamiento', 'Middleware'], ['Publicación', 'Display Visual']],
+                    datasets: [{
+                        data: [200, 300, 100, 400],
+                        backgroundColor: ['#2563eb', '#0d9488', '#f59e0b', '#059669'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    let l = items[0].chart.data.labels[items[0].dataIndex];
+                                    return Array.isArray(l) ? l.join(' ') : l;
+                                },
+                                label: function(ctx) {
+                                    return ctx.label + ': ' + ctx.raw + ' ms';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 3. Comparison Chart
+            var ctxComparison = document.getElementById('comparisonChart').getContext('2d');
+            new Chart(ctxComparison, {
+                type: 'bar',
+                data: {
+                    labels: [['Tiempo Reacción', '(segundos)'], ['Carga Manual', 'Staff (%)'], ['Tasa Errores', 'Restauración (%)'], ['Tiempo Config.', 'Cambios (min)']],
+                    datasets: [
+                        { label: 'Escenario Tradicional (Manual)', data: [180, 100, 35, 45], backgroundColor: '#f43f5e' },
+                        { label: 'Solución MassComm Innova', data: [2, 0, 0, 1], backgroundColor: '#10b981' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    let l = items[0].chart.data.labels[items[0].dataIndex];
+                                    return Array.isArray(l) ? l.join(' ') : l;
+                                }
+                            }
+                        }
+                    },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+
+            // 4. Multi-Sector Radar Chart
+            var ctxRadar = document.getElementById('radarChart').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: [['Entornos', 'Sanitarios'], ['Salas de', 'Lectura'], ['Oficinas', 'Open Space'], ['Terminales', 'Transporte'], ['Entornos', 'Industriales']],
+                    datasets: [{
+                        label: 'Índice de Aplicabilidad (%)',
+                        data: [98, 90, 85, 92, 95],
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                        borderColor: '#2563eb',
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    let l = items[0].chart.data.labels[items[0].dataIndex];
+                                    return Array.isArray(l) ? l.join(' ') : l;
+                                }
+                            }
+                        }
+                    },
+                    scales: { r: { angleLines: { display: true }, suggestedMin: 50, suggestedMax: 100 } }
+                }
+            });
+
+            // Set initial tab
+            switchTab('caso-exito');
+            updateROI();
+        });
+    </script>
+</body>
+</html>
